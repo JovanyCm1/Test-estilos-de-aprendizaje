@@ -97,5 +97,5 @@ function resultado() {
     console.log("Puntos cinestesico: " + cinestesico);
 
     alert("Tu estilo de aprendizaje es: " + estilo);
-    window.location = 'cuestionario.html';
+    //window.location = 'index.html';
 }
