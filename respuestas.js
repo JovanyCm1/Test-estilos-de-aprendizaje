@@ -98,4 +98,3 @@ function resultado() {
 
     alert("Tu estilo de aprendizaje es: " + estilo);
     //window.location = 'index.html';
-}
