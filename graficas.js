@@ -1,6 +1,11 @@
 //creo una variable para agregar los datos a mis graficas
 const resultados = JSON.parse(localStorage.getItem("resultadosAprendizaje"));
 
+// Mostrar el estilo de aprendizaje en el HTML
+estilo = resultados.estilo;
+var estiloElemento = document.getElementById("estilo-aprendizaje");
+estiloElemento.textContent = "Tu estilo de aprendizaje es: " + estilo;
+
 const barData = {
     labels: ["Tipos de Aprendizaje"],
     datasets: [
