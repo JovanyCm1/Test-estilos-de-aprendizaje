@@ -1,11 +1,16 @@
+//variable global para guardar los datos
+const resultadosAprendizaje = {};
+
 function resultado() {
     var visual = 0, auditivo = 0, cinestesico = 0;
     var respuestas = [];
     var conteoA = 0, conteoB = 0, conteoC = 0;
+    var preguntasNoContestadas = [];
 
     // Función auxiliar para asignar puntos y registrar respuestas
     function asignarPuntos(pregunta, visualInciso, auditivoInciso, cinestesicoInciso) {
         var radios = document.getElementsByName(pregunta);
+        var contestada = false;
         for (var i = 0; i < radios.length; i++) {
             if (radios[i].checked) {
                 respuestas.push({ pregunta: pregunta, respuesta: radios[i].value });
@@ -27,8 +32,12 @@ function resultado() {
                 } else if (radios[i].value === cinestesicoInciso) {
                     cinestesico++;
                 }
+                contestada = true;
                 break;
             }
+        }
+        if (!contestada) {
+            preguntasNoContestadas.push(pregunta);
         }
     }
 
@@ -74,6 +83,11 @@ function resultado() {
     asignarPuntos('pregunta39', 'B', 'C', 'A'); // 39a pregunta
     asignarPuntos('pregunta40', 'C', 'A', 'B'); // 40a pregunta
 
+    if (preguntasNoContestadas.length > 0) {
+        alert("Por favor, contesta las siguientes preguntas: " + preguntasNoContestadas.join(", "));
+        return;
+    }
+
     // Determinar el estilo de aprendizaje predominante
     var estilo = '';
     if (visual > auditivo && visual > cinestesico) {
@@ -96,6 +110,18 @@ function resultado() {
     console.log("Puntos auditivo: " + auditivo);
     console.log("Puntos cinestesico: " + cinestesico);
 
-    alert("Tu estilo de aprendizaje es: " + estilo);
+    //variable para almacenar los datos en localStorage
+    resultadosAprendizaje.visual = visual;
+    resultadosAprendizaje.auditivo = auditivo;
+    resultadosAprendizaje.cinestesico = cinestesico;
+    resultadosAprendizaje.estilo = estilo;
+
+    //Se guardan los datos y son accesibles desde cualquier lado
+    localStorage.setItem("resultadosAprendizaje", JSON.stringify(resultadosAprendizaje));
+
+    // Abrir otra página en una nueva pestaña
+    window.location.href = "graficas.html";
+
+    //alert("Tu estilo de aprendizaje es: " + estilo);
     //window.location = 'index.html';
 }
