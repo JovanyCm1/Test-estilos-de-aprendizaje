@@ -5,47 +5,99 @@
   font-family: "Balsamiq Sans", sans-serif;
 }
 
+body {
+  font-family: "Balsamiq Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('F1.png'); /* Aquí colocas la ruta de tu imagen */
+  background-size: cover; /* Para que la imagen cubra todo el fondo */
+  background-position: center; /* Centrar la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Mantiene la imagen fija mientras haces scroll */
+  color: #333;
+}
+.rounded-background {
+  background-color: #0067b2; /* Color celeste */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  color: #fff; /* Texto en blanco para mejor contraste */
+  display: inline-block;
+  text-align: center; /* Asegura que el texto esté centrado */
+}
+
+h1.rounded-background {
+  width: 100%; /* Asegura que el h1 ocupe todo el ancho del contenedor */
+  display: inline-block; /* Para evitar que el título se desplace */
+  text-align: center; /* Centra el contenido */
+  padding: 15px;
+}
+
+h2.rounded-background {
+  padding: 15px;
+}
+
 header {
   text-align: center;
-  background: #000;
+  background: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
   color: #fff;
   padding: 10px 0;
 }
 
-.container {
+h1, h2, h3 {
+  text-align: center;
+  color: #4A4A4A;
+}
+
+p {
+  text-align: justify;
+  margin: 0 15px;
+  line-height: 1.6;
+}
+
+.info-container {
   max-width: 700px;
   margin: auto;
   padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+  border-radius: 10px;
 }
 
-section {
-  border: 2px solid #5624d0;
-  border-radius: 7px;
+.chart-container {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra en el contenedor de gráficas */
+  text-align: center; /* Centra el contenido dentro del contenedor */
+}
+
+canvas {
+  display: inline-block; /* Hace que el canvas sea tratado como un bloque alineado en línea */
+  margin: 20px auto;
   padding: 10px;
-  margin: 10px 0;
-}
-li {
-  display: block;
-  padding: 7px;
-  border-radius: 7px;
-  cursor: pointer;
-  border: 1px dashed #ccc;
-  margin-bottom: 10px; /* Añadido un valor para margin-bottom */
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente para las gráficas */
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Añadido sombra a los gráficos */
 }
 
-li:hover {
-  background: #cec0fc;
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 button {
   width: 80%;
   display: block;
-  margin: auto;
-  padding: 10px;
+  margin: 20px auto;
+  padding: 12px;
   background-color: #76d7c8;
   border: none;
   cursor: pointer;
   border-radius: 20px;
+  font-size: 18px;
+  color: #fff;
 }
 
 button:hover {
@@ -53,6 +105,18 @@ button:hover {
   color: #fff;
 }
 
-h2 {
-  text-align: center;
+@media (max-width: 768px) {
+  .chart-container {
+    padding: 15px;
+    margin: 20px;
+  }
+
+  canvas {
+    margin: 10px 0;
+    padding: 5px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
 }

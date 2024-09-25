@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gráficos de Tipos de Aprendizaje</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="estilos.css" />
   </head>
   <body>
     <div class="info-container">
-      <h1>Descripción de los Tipos de Aprendizaje</h1>
+      <h1 class="rounded-background">Descripción de los Tipos de Aprendizaje</h1>
 
       <h3>Visual:</h3>
       <p>
@@ -32,16 +33,14 @@
       </p>
     </div>
 
-    <div style="width: 60%; margin: 0 auto">
-      <h2>
-        Gráfico de barras para visualizar que tipo de aprendizaje es el más
-        domiante
+    <div class="chart-container">
+      <h2 class="rounded-background">
+        Gráfico de barras para visualizar qué tipo de aprendizaje es el más dominante
       </h2>
       <canvas id="myBarChart"></canvas>
-
-      <h2>
-        Gráfico de radar para visualizar que tipo de aprendizaje es el más
-        domiante
+    
+      <h2 class="rounded-background">
+        Gráfico de radar para visualizar qué tipo de aprendizaje es el más dominante
       </h2>
       <canvas id="myRadarChart"></canvas>
     </div>
