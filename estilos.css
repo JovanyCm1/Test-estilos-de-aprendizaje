@@ -16,6 +16,67 @@ body {
   background-attachment: fixed; /* Mantiene la imagen fija mientras haces scroll */
   color: #333;
 }
+
+/* Centramos el texto de introducción */
+.intro-text {
+  text-align: center; /* Centrar el texto */
+  font-size: 1.2em;
+  margin: 20px auto; /* Espaciado para separarlo de los demás elementos */
+  max-width: 800px; /* Limitar el ancho del texto */
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.47); /* Fondo blanco semitransparente para mejor visibilidad */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+h1 {
+  display: inline-block;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.8); /* Color de fondo similar al celeste */
+  padding: 15px 60px;
+  border-radius: 20px; /* Bordes redondeados para que sea más estilizado */
+  z-index: 3; /* Mantener el texto por encima del resto */
+  position: relative; /* Aseguramos que se posicione adecuadamente */
+  box-shadow: 0px 4px 12px rgba(255, 0, 0, 0.1); /* Sombra ligera */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('F1.png'); /* La imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1; /* Mantiene el fondo detrás del contenido */
+}
+
+/* Centrado y estilizado del texto de introducción */
+.intro-text {
+  text-align: center;
+  font-size: 1.2em;
+  margin: 1px auto;
+  max-width: 800px;
+  padding: 10px;
+  background-color: rgba(103, 103, 103, 0.8);
+  border-radius: 10px;
+}
+
+/* Ajuste de la sombra para la consistencia */
+h1 {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .rounded-background {
   background-color: #0067b2; /* Color celeste */
   border-radius: 20px; /* Bordes redondeados */
@@ -38,9 +99,9 @@ h2.rounded-background {
 
 header {
   text-align: center;
-  background: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
+  background: transparent; /* Hacer el fondo transparente */
   color: #fff;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 h1, h2, h3 {
@@ -118,5 +179,72 @@ button:hover {
 
   h2 {
     font-size: 20px;
+  }
+}
+
+/* Estilo general del formulario */
+form {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+  padding: 20px;
+  border-radius: 15px; /* Bordes redondeados */
+  max-width: 800px;
+  margin: 20px auto; /* Centrar el formulario */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilo de las preguntas */
+section {
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Estilo de las opciones de radio */
+ol li {
+  list-style-type: none; /* Quita los números */
+  margin-bottom: 10px; /* Espacio entre opciones */
+  padding: 10px;
+  background-color: #f4f4f4; /* Fondo gris claro para las opciones */
+  border-radius: 10px; /* Bordes redondeados */
+  border: 1px solid #ddd; /* Borde gris */
+}
+
+/* Estilo de los inputs tipo radio */
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Botón de resultado */
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Hacer el formulario responsivo */
+@media (max-width: 768px) {
+  form {
+    width: 90%;
+    padding: 10px;
+  }
+
+  ol li {
+    padding: 8px;
+  }
+
+  button {
+    font-size: 1em;
   }
 }
