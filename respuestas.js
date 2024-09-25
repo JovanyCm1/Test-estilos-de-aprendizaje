@@ -1,3 +1,6 @@
+//variable global para guardar los datos
+const resultadosAprendizaje = {};
+
 function resultado() {
     var visual = 0, auditivo = 0, cinestesico = 0;
     var respuestas = [];
@@ -96,6 +99,17 @@ function resultado() {
     console.log("Puntos auditivo: " + auditivo);
     console.log("Puntos cinestesico: " + cinestesico);
 
-    alert("Tu estilo de aprendizaje es: " + estilo);
+    //variable para almacenar los datos en localStorage
+    resultadosAprendizaje.visual = visual;
+    resultadosAprendizaje.auditivo = auditivo;
+    resultadosAprendizaje.cinestesico = cinestesico;
+
+    //Se guardan los datos y son accesibles desde cualquier lado
+    localStorage.setItem("resultadosAprendizaje", JSON.stringify(resultadosAprendizaje));
+
+    // Abrir otra página en una nueva pestaña
+    window.open("graficas.html", "_blank");
+
+    //alert("Tu estilo de aprendizaje es: " + estilo);
     //window.location = 'index.html';
 }
