@@ -301,6 +301,7 @@ button {
 }
 
 .progress-container {
+  position: relative; /* Necesario para posicionar el texto */
   width: 90%; /* Ajusta el ancho para que no ocupe toda la pantalla */
   margin: 0 auto; /* Centra la barra y añade margen inferior */
   background-color: #f3f3f3;
@@ -314,4 +315,13 @@ button {
   height: 20px;
   background-color: #4caf50;
   transition: width 0.4s ease; /* Animación suave */
+}
+
+.progress-text {
+  position: absolute; /* Posiciona el texto de forma absoluta */
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta la posición para centrar */
+  color: #000000; /* Color del texto */
+  font-weight: bold; /* Negrita para mejor visibilidad */
 }
