@@ -5,47 +5,187 @@
   font-family: "Balsamiq Sans", sans-serif;
 }
 
-header {
-  text-align: center;
-  background: #000;
-  color: #fff;
-  padding: 10px 0;
+body {
+  font-family: "Balsamiq Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("F1.png"); /* Aquí colocas la ruta de tu imagen */
+  background-size: cover; /* Para que la imagen cubra todo el fondo */
+  background-position: center; /* Centrar la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Mantiene la imagen fija mientras haces scroll */
+  color: #333;
 }
 
-.container {
+/* Centramos el texto de introducción */
+.intro-text {
+  text-align: center; /* Centrar el texto */
+  font-size: 1.2em;
+  margin: 20px auto; /* Espaciado para separarlo de los demás elementos */
+  max-width: 800px; /* Limitar el ancho del texto */
+  padding: 10px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.47
+  ); /* Fondo blanco semitransparente para mejor visibilidad */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+h1 {
+  display: inline-block;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Color de fondo similar al celeste */
+  padding: 15px 60px;
+  border-radius: 20px; /* Bordes redondeados para que sea más estilizado */
+  z-index: 3; /* Mantener el texto por encima del resto */
+  position: relative; /* Aseguramos que se posicione adecuadamente */
+  box-shadow: 0px 4px 12px rgba(255, 0, 0, 0.1); /* Sombra ligera */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("F1.png"); /* La imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1; /* Mantiene el fondo detrás del contenido */
+}
+
+/* Centrado y estilizado del texto de introducción */
+.intro-text {
+  text-align: center;
+  font-size: 1.2em;
+  margin: 1px auto;
+  max-width: 800px;
+  padding: 10px;
+  background-color: rgba(103, 103, 103, 0.8);
+  border-radius: 10px;
+}
+
+/* Ajuste de la sombra para la consistencia */
+h1 {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-background {
+  background-color: #0067b2; /* Color celeste */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  color: #fff; /* Texto en blanco para mejor contraste */
+  display: inline-block;
+  text-align: center; /* Asegura que el texto esté centrado */
+}
+
+h1.rounded-background {
+  width: 100%; /* Asegura que el h1 ocupe todo el ancho del contenedor */
+  display: inline-block; /* Para evitar que el título se desplace */
+  text-align: center; /* Centra el contenido */
+  padding: 15px;
+}
+
+h2.rounded-background {
+  padding: 15px;
+}
+
+header {
+  text-align: center;
+  background: transparent; /* Hacer el fondo transparente */
+  color: #fff;
+  padding: 20px 0;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: #4a4a4a;
+}
+
+p {
+  text-align: justify;
+  margin: 0 15px;
+  line-height: 1.6;
+}
+
+.info-container {
   max-width: 700px;
   margin: auto;
   padding: 20px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Fondo blanco semitransparente */
+  border-radius: 10px;
 }
 
-section {
-  border: 2px solid #5624d0;
-  border-radius: 7px;
+.chart-container {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Fondo blanco semitransparente */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra en el contenedor de gráficas */
+  text-align: center; /* Centra el contenido dentro del contenedor */
+}
+
+canvas {
+  display: inline-block; /* Hace que el canvas sea tratado como un bloque alineado en línea */
+  margin: 20px auto;
   padding: 10px;
-  margin: 10px 0;
-}
-li {
-  display: block;
-  padding: 7px;
-  border-radius: 7px;
-  cursor: pointer;
-  border: 1px dashed #ccc;
-  margin-bottom: 10px; /* Añadido un valor para margin-bottom */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Fondo blanco semitransparente para las gráficas */
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Añadido sombra a los gráficos */
 }
 
-li:hover {
-  background: #cec0fc;
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 button {
   width: 80%;
   display: block;
-  margin: auto;
-  padding: 10px;
+  margin: 20px auto;
+  padding: 12px;
   background-color: #76d7c8;
   border: none;
   cursor: pointer;
   border-radius: 20px;
+  font-size: 18px;
+  color: #fff;
 }
 
 button:hover {
@@ -53,6 +193,97 @@ button:hover {
   color: #fff;
 }
 
-h2 {
-  text-align: center;
+@media (max-width: 768px) {
+  .chart-container {
+    padding: 15px;
+    margin: 20px;
+  }
+
+  canvas {
+    margin: 10px 0;
+    padding: 5px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+/* Estilo general del formulario */
+form {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Fondo blanco semitransparente */
+  padding: 20px;
+  border-radius: 15px; /* Bordes redondeados */
+  max-width: 800px;
+  margin: 20px auto; /* Centrar el formulario */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilo de las preguntas */
+section {
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Estilo de las opciones de radio */
+ol li {
+  list-style-type: none; /* Quita los números */
+  margin-bottom: 10px; /* Espacio entre opciones */
+  padding: 10px;
+  background-color: #f4f4f4; /* Fondo gris claro para las opciones */
+  border-radius: 10px; /* Bordes redondeados */
+  border: 1px solid #ddd; /* Borde gris */
+}
+
+/* Estilo de los inputs tipo radio */
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Botón de resultado */
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Hacer el formulario responsivo */
+@media (max-width: 768px) {
+  form {
+    width: 90%;
+    padding: 10px;
+  }
+
+  ol li {
+    padding: 8px;
+  }
+
+  button {
+    font-size: 1em;
+  }
+}
+
+.result-container {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  margin: 20px 0; /* Añade un margen para separar el div de otros elementos */
 }
