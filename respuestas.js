@@ -142,12 +142,28 @@ function resultado() {
 }
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
+  const progressBar = document.getElementById("progress-bar");
+  const totalQuestions = sections.length;
+
+  // Ocultar todas las secciones excepto la primera
+  sections.forEach((section, index) => {
+    if (index !== 0) {
+      section.style.display = "none";
+    }
+  });
+
   sections.forEach((section, index) => {
     const inputs = section.querySelectorAll('input[type="radio"]');
     inputs.forEach((input) => {
       input.addEventListener("change", function () {
         if (index + 1 < sections.length) {
+          sections[index].style.display = "none";
+          sections[index + 1].style.display = "block";
           sections[index + 1].scrollIntoView({ behavior: "smooth" });
+
+          // Actualizar la barra de progreso
+          const progress = ((index + 1) / totalQuestions) * 100;
+          progressBar.style.width = progress + "%";
         }
       });
     });

@@ -288,3 +288,30 @@ button:hover {
   align-items: center; /* Centra el contenido verticalmente */
   margin: 20px 0; /* Añade un margen para separar el div de otros elementos */
 }
+
+button {
+  font-size: 1em;
+}
+
+.result-container {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  margin: 20px 0; /* Añade un margen para separar el div de otros elementos */
+}
+
+.progress-container {
+  width: 90%; /* Ajusta el ancho para que no ocupe toda la pantalla */
+  margin: 0 auto; /* Centra la barra y añade margen inferior */
+  background-color: #f3f3f3;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  overflow: hidden; /* Para que los bordes redondeados se apliquen correctamente */
+}
+
+.progress-bar {
+  width: 0%;
+  height: 20px;
+  background-color: #4caf50;
+  transition: width 0.4s ease; /* Animación suave */
+}
