@@ -238,6 +238,7 @@ section p {
 ol li {
   list-style-type: none; /* Quita los números */
   margin-bottom: 10px; /* Espacio entre opciones */
+  margin-right: 30px; /* Espacio entre opciones */
   padding: 10px;
   background-color: #f4f4f4; /* Fondo gris claro para las opciones */
   border-radius: 10px; /* Bordes redondeados */
