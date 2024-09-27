@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         preConfirm: (email) => {
 
             let email_validacion = email.toLowerCase();
-            const emailRegex = /^[^\s@]+@(gmail\.com|hotmail\.com|outlook\.com)$/;
+            const emailRegex = /^[^\s@]+@(gmail\.com|hotmail\.com|outlook\.com|itsmante\.edu\.mx)$/;
 
             if (!emailRegex.test(email_validacion)) {
                 Swal.showValidationMessage('Correo incorrecto. Por favor, ingresa un correo válido.');
