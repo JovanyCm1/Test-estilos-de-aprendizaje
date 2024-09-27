@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 visual: resultados.visual,
                 cin: resultados.cinestesico,
                 auditivo: resultados.auditivo,
+                preguntas: resultados.formulario
             }).then((response) => {
                 Swal.fire({
                     title: "Correo enviado correctamente",
