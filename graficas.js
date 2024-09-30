@@ -1,6 +1,6 @@
 //creo una variable para agregar los datos a mis graficas
+const resultados = JSON.parse(localStorage.getItem("resultadosAprendizaje"));
 document.addEventListener('DOMContentLoaded', (event) => {
-    const resultados = JSON.parse(localStorage.getItem("resultadosAprendizaje"));
 
     // Mostrar el estilo de aprendizaje en el HTML
     estilo = resultados.estilo;
@@ -129,3 +129,43 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 });
+
+function createPDF() {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+
+    // Agregar texto inicial al PDF
+    pdf.setFontSize(12);
+    pdf.text("Estilo de aprendizaje:", 10, 10);
+    pdf.text(estilo, 10, 20);
+
+    pdf.setFontSize(12);
+    pdf.text("Respuestas del formulario:", 10, 30);
+    const preguntas = resultados.formulario || "No hay respuestas";
+    let splitPreguntas = pdf.splitTextToSize(preguntas, 500);
+    pdf.text(splitPreguntas, 10, 40);
+
+    // Añadir una nueva página para los gráficos
+    pdf.addPage();
+    pdf.setFontSize(12);
+    pdf.text("Gráficas con los resultados", 10, 10);
+
+    setTimeout(() => {
+        // Exportar el gráfico de barras como imagen
+        const barCanvas = document.getElementById("myBarChart");
+        const barImgData = barCanvas.toDataURL("image/png");
+
+        // Añadir la imagen del gráfico de barras al PDF
+        pdf.addImage(barImgData, "PNG", 10, 20, 190, 100);
+
+        // Exportar el gráfico de radar como imagen
+        const radarCanvas = document.getElementById("myRadarChart");
+        const radarImgData = radarCanvas.toDataURL("image/png");
+
+        // Añadir la imagen del gráfico de radar al PDF
+        pdf.addImage(radarImgData, "PNG", 10, 140, 190, 100);
+
+        // Guardar el PDF
+        pdf.save('Resultados del test.pdf');
+    }, 500);
+}

@@ -132,14 +132,16 @@ function resultado() {
 
     var preguntasRespuestas = preguntas.map(function (pregunta, index) {
         return {
-            pregunta: pregunta,
-            respuesta: respuestas[index]
+            pregunta: pregunta.trim(),
+            respuesta: respuestas[index].trim()
         };
     });
 
+    // Construir la cadena de preguntas y respuestas correctamente
     var preguntasRespuestasString = preguntasRespuestas.map(function (item) {
-        return `${item.pregunta}:\n ${item.respuesta}`;
-    }).join("\n\n");
+        return item.pregunta + ": " + item.respuesta;
+    }).join("\n");
+
 
 
     //variable para almacenar los datos en localStorage

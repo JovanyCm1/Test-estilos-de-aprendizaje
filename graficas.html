@@ -15,6 +15,9 @@
 
       <div class="result-container">
         <h2 id="estilo-aprendizaje" class="rounded-background center-text"></h2>
+        <h2>
+          Descarga el PDF con tus respuestas y gráficas <a href="#" onclick="createPDF()">aquí</a>
+      </h2>
       </div>
 
       <h3>Visual:</h3>
@@ -55,9 +58,15 @@
 
     <script src="graficas.js"></script>
 
+    <!--Librerias para el apartado de las notificaciones-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+    <!--Librerias para el manejo de pdfs-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!--Librerias para mandar el correo-->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
